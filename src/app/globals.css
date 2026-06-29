@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+/* =========================
+   CSS VARIABLES
+========================= */
+
+:root {
+  /* Brand Colors */
+  --background: #050816;
+  --surface: #111827;
+  --surface-light: #1f2937;
+
+  --primary: #2563eb;
+  --primary-light: #3b82f6;
+
+  --accent: #06b6d4;
+  --sand: #d4a373;
+
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+
+  --border: rgba(255, 255, 255, 0.08);
+
+  --success: #10b981;
+  --danger: #ef4444;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+
+  /* Shadows */
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, .35);
+
+  /* Animation */
+  --transition: all .35s ease;
+}
+
+/* =========================
+   BASE
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #050816;
+  color: white;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  letter-spacing: -.03em;
+}
+
+p {
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================
+   SELECTION
+========================= */
+
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090d1b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to bottom,
+    var(--primary),
+    var(--accent)
+  );
+  border-radius: 50px;
+}
+
+/* =========================
+   UTILITIES
+========================= */
+
+.section {
+  padding: 8rem 0;
+}
+
+.text-gradient {
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--accent)
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sand-gradient {
+  background: linear-gradient(
+    90deg,
+    #d4a373,
+    #f6d365
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass {
+  backdrop-filter: blur(18px);
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.container-custom {
+  width: min(92%, 1400px);
+  margin-inline: auto;
+}
+
+/* =========================
+   BUTTON EFFECTS
+========================= */
+
+.btn-hover {
+  transition: var(--transition);
+}
+
+.btn-hover:hover {
+  transform: translateY(-4px);
+}
+
+/* =========================
+   ANIMATED BACKGROUND
+========================= */
+
+body::before {
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  background:
+    radial-gradient(circle at top right,
+    rgba(37,99,235,.12),
+    transparent 35%),
+
+    radial-gradient(circle at bottom left,
+    rgba(6,182,212,.08),
+    transparent 30%);
+
+  z-index: -1;
+}
